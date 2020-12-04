@@ -103,3 +103,6 @@ class SubscribeSuccessMessage(TestCase):
 
         response = self.client.post('/inscricao/', data, follow=True)
         self.assertContains(response, 'Inscrição realizada com sucesso')
+
+    def test_subscription_link(self):
+        self.assertContains(self.response, 'href="/inscricao/"')
